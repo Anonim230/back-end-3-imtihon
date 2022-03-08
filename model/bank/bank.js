@@ -38,8 +38,6 @@ module.exports = {
             if (query.duration) string = array.push(+query.duration) && `\n${string} ${array.length > 1 ? 'AND' : ''} c.credit_duration < $${array.length}`
             if (query.bank) string = array.push(+query.bank) && `\n${string} ${array.length > 1 ? 'AND' : ''} c.bank_fillial_id = $${array.length}`
             string += ``
-        } else {
-            string += 'limit 1'
         }
         // console.log(query, array);
         // res.end('Ok')
